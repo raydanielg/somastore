@@ -3,7 +3,7 @@
 @section('content')
 <div class="auth-shell">
     <div class="auth-title">
-        <div class="auth-logo">W</div>
+        <img src="{{ asset('logo.png') }}" alt="Logo" style="height: 50px; margin-bottom: 10px;">
         <div>{{ __('Create account') }}</div>
     </div>
 
