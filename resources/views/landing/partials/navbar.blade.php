@@ -15,9 +15,9 @@
                         Schemes of work
                     </a>
                     <ul class="dropdown-menu shadow-lg border-0" aria-labelledby="schemesDropdown">
-                        <li><a class="dropdown-item" href="#">Secondary school</a></li>
-                        <li><a class="dropdown-item" href="#">Primary school</a></li>
-                        <li><a class="dropdown-item" href="#">Nursery school</a></li>
+                        <li><a class="dropdown-item" href="{{ route('schemes.secondary') }}">Secondary school</a></li>
+                        <li><a class="dropdown-item" href="{{ route('schemes.primary') }}">Primary school</a></li>
+                        <li><a class="dropdown-item" href="{{ route('schemes.nursery') }}">Nursery school</a></li>
                     </ul>
                 </li>
 
@@ -27,21 +27,21 @@
                         Logbooks
                     </a>
                     <ul class="dropdown-menu shadow-lg border-0" aria-labelledby="logbooksDropdown">
-                        <li><a class="dropdown-item" href="#">Secondary school</a></li>
-                        <li><a class="dropdown-item" href="#">Primary school</a></li>
-                        <li><a class="dropdown-item" href="#">Nursery school</a></li>
+                        <li><a class="dropdown-item" href="{{ route('schemes.secondary') }}">Secondary school</a></li>
+                        <li><a class="dropdown-item" href="{{ route('schemes.primary') }}">Primary school</a></li>
+                        <li><a class="dropdown-item" href="{{ route('schemes.nursery') }}">Nursery school</a></li>
                     </ul>
                 </li>
 
                 <!-- Lesson Plans -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="lessonsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Lesson Plans
+                        Lesson plans
                     </a>
                     <ul class="dropdown-menu shadow-lg border-0" aria-labelledby="lessonsDropdown">
-                        <li><a class="dropdown-item" href="#">Secondary school</a></li>
-                        <li><a class="dropdown-item" href="#">Primary school</a></li>
-                        <li><a class="dropdown-item" href="#">Nursery school</a></li>
+                        <li><a class="dropdown-item" href="{{ route('lesson_plans.secondary') }}">Secondary school</a></li>
+                        <li><a class="dropdown-item" href="{{ route('lesson_plans.primary') }}">Primary school</a></li>
+                        <li><a class="dropdown-item" href="{{ route('lesson_plans.nursery') }}">Nursery school</a></li>
                     </ul>
                 </li>
 
@@ -50,25 +50,27 @@
                     <a class="nav-link dropdown-toggle" href="#" id="examsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Exams
                     </a>
-                    <ul class="dropdown-menu shadow-lg border-0" aria-labelledby="examsDropdown">
-                        <li><a class="dropdown-item d-flex justify-content-between align-items-center" href="#">
-                            Exam packages <span class="badge rounded-pill bg-primary ms-2" style="font-size: 8px;">NEW</span>
-                        </a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Secondary exams</a></li>
-                        <li><a class="dropdown-item" href="#">Primary exams</a></li>
-                        <li><a class="dropdown-item" href="#">Regional exams</a></li>
-                        <li><a class="dropdown-item" href="#">Topical exams</a></li>
-                        <li><a class="dropdown-item" href="#">Practical exams</a></li>
+                    <ul class="dropdown-menu shadow-lg border-0" aria-labelledby="examsDropdown" style="min-width: 250px;">
+                        <li>
+                            <a class="dropdown-item d-flex justify-content-between align-items-center" href="{{ route('exams.packages') }}">
+                                Exam packages <span class="badge bg-primary ms-2">NEW</span>
+                            </a>
+                        </li>
+                        <li><a class="dropdown-item" href="{{ route('exams.series') }}">Exam series</a></li>
+                        <li><a class="dropdown-item" href="{{ route('exams.secondary') }}">Secondary exams</a></li>
+                        <li><a class="dropdown-item" href="{{ route('exams.primary') }}">Primary exams</a></li>
+                        <li><a class="dropdown-item" href="{{ route('exams.regional') }}">Regional exams</a></li>
+                        <li><a class="dropdown-item" href="{{ route('exams.topical') }}">Topical exams</a></li>
+                        <li><a class="dropdown-item" href="{{ route('exams.practical') }}">Practical exams</a></li>
                     </ul>
                 </li>
 
-                <li class="nav-item"><a class="nav-link" href="#">Subject Notes</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('notes.index') }}">Subject Notes</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('contact.index') }}">Contact</a></li>
             </ul>
                 <div class="d-flex gap-2">
                     @auth
-                        <a href="{{ url('/home') }}" class="btn btn-green shadow-sm">Dashboard</a>
+                        <a href="{{ route('seller.dashboard') }}" class="btn btn-green shadow-sm">Dashboard</a>
                     @else
                         <a href="{{ route('login') }}" class="btn fw-bold">Log in</a>
                         <a href="{{ route('register') }}" class="btn btn-green shadow-sm">Get started</a>
